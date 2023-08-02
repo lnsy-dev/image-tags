@@ -44,11 +44,9 @@ class LazyImg extends HTMLElement {
       img.setAttribute('src', dataUrl);
       this.innerHTML = '';
       this.appendChild(img);
+      
+      img.style.display = 'block';
 
-      img.onload = () => {
-        this.style.width = img.naturalWidth + 'px';
-        this.style.height = img.naturalHeight + 'px';
-      }
 
     } catch (error) {
       this.innerHTML = `<error>${error.message}</error>`;
