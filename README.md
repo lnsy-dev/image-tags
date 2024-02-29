@@ -1,4 +1,4 @@
-# README for LazyImg Custom HTML Element
+# LazyImg Custom HTML Element
 
 ## Overview
 
