@@ -1,73 +1,58 @@
-# LazyImg Custom HTML Element
+# Lazy Image Loader Custom Element
 
-## Overview
-
-The `LazyImg` custom HTML element is designed to provide a lazy-loading image functionality within web applications. It enhances performance by loading images asynchronously and updating their load progress in real-time. This element is especially useful for improving the user experience in image-heavy web applications, reducing initial load times, and conserving bandwidth by loading images only as needed.
+This project defines a custom HTML element, `<lazy-img>`, designed for lazy-loading images with progress updates. It is an innovative solution for improving web performance by loading images as needed rather than all at once during the initial page load.
 
 ## Features
 
-- **Asynchronous Image Loading**: Loads images in the background without blocking the main thread, improving page responsiveness.
-- **Progress Tracking**: Displays the loading progress of each image, offering visual feedback to the user.
-- **Automatic Retry on Failure**: Attempts to reload the image upon a loading error, with a randomized retry delay.
-- **Custom Error Handling**: Displays a custom error message if an image fails to load or if the image URL is not provided.
+- **Lazy-Loading:** Images are loaded only when the `<lazy-img>` element is inserted into the DOM, reducing initial page load time.
+- **Progress Updates:** Displays loading progress in real-time, enhancing user experience during slow network conditions.
+- **Error Handling:** Provides error feedback directly within the element and attempts to reload the image after a brief, randomized delay.
 
-## How to Use
+## How It Works
 
-### Installation
+The `LazyImg` class extends `HTMLElement` and implements the following key functionalities:
 
-To use the `LazyImg` element, include the class definition script in your HTML document or web component module:
+1. **Image Source Attribute (`src`):** The `src` attribute specifies the URL of the image to be lazy-loaded.
+2. **Connected Callback:** Triggered when the element is inserted into the DOM, initiating the image loading process.
+3. **Progress Calculation:** As the image loads, progress is calculated and displayed within the element.
+4. **Error Handling:** Errors during the loading process are displayed, and the element will retry loading the image after a randomized delay.
 
-```html
-<script src="path/to/LazyImg.js"></script>
-```
+## Usage
 
-### Usage
-
-After including the script, you can use the `LazyImg` element anywhere in your HTML documents or dynamic JavaScript code. Here's a simple example:
+To use the `<lazy-img>` element in your HTML, simply include it as you would any custom element:
 
 ```html
 <lazy-img src="path/to/your/image.jpg"></lazy-img>
 ```
+Ensure the JavaScript defining LazyImg is executed before using the element in your HTML.
 
-#### Attributes
+Installation
+Include the JavaScript code for the LazyImg class in your project. You can do this by adding the script directly in your HTML or by importing it into your JavaScript bundle.
 
-- `src`: Specifies the URL of the image to load lazily. This attribute is required for the `LazyImg` element to function properly.
+Contributing
+Contributions are welcome! If you'd like to improve the lazy image loader, please feel free to fork the repository, make your changes, and submit a pull request.
 
-### Styling
+License
+This project is open source and available under the MIT License.
 
-The `LazyImg` element can be styled using CSS like any standard HTML element. For example:
+Example
+Here's a simple example of how to include and use the <lazy-img> element in an HTML page:
 
-```css
-lazy-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lazy Image Loader Example</title>
+</head>
+<body>
+    <lazy-img src="path/to/your/image.jpg"></lazy-img>
+
+    <script src="path/to/lazy-img.js"></script>
+</body>
+</html>
+
 ```
 
-### Error Handling
+Remember to adjust the src attribute to the path of your image and the <script> source to the location of your LazyImg class definition.
 
-If an image fails to load or if the `src` attribute is missing, `LazyImg` will display an error message within the element. You can style these error messages using CSS:
-
-```css
-lazy-img error {
-  color: red;
-  font-weight: bold;
-}
-```
-
-### JavaScript Interaction
-
-Although `LazyImg` does not expose public methods for interaction, you can manipulate it through standard DOM methods and properties, such as setting attributes:
-
-```javascript
-document.querySelector('lazy-img').setAttribute('src', 'new/path/to/image.jpg');
-```
-
-## Browser Compatibility
-
-`LazyImg` uses modern web technologies such as custom elements and the Fetch API. Ensure your target browsers support these features, or include appropriate polyfills for broader compatibility.
-
-## Conclusion
-
-The `LazyImg` custom HTML element offers an efficient, easy-to-use solution for lazy-loading images with progress tracking and error handling. Its integration into your web projects can significantly improve page load times and user experience, especially in content-rich applications.
