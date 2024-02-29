@@ -11,8 +11,6 @@ class LazyImg extends HTMLElement {
     }
     // Start loading the image.
     this.loadImage();
-    // Set the CSS object-fit property to fill to ensure the image covers the element area.
-    this.style.objectFit = 'fill';
   }
 
   // Updates the element's innerHTML to display the current loading progress.
@@ -70,18 +68,6 @@ class LazyImg extends HTMLElement {
     }
   }
 
-  // Defines which attributes changes should be observed (none in this case).
-  static get observedAttributes() {
-    return [];
-  }
-
-  // Handles attribute changes. Currently, it does nothing.
-  attributeChangedCallback(name, old_value, new_value) {
-    switch (name) {
-      // No attributes to observe, so no action is taken.
-      default:
-    }
-  }
 }
 
 // Register the custom element with the browser.
