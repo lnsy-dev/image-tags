@@ -45,8 +45,6 @@ lazy-img {
 }
 ```
 
-**Note:** The image loaded by `LazyImg` will inherit the dimensions of the `lazy-img` element, so it's recommended to set appropriate width and height either directly on the `lazy-img` element or through CSS.
-
 ### Error Handling
 
 If an image fails to load or if the `src` attribute is missing, `LazyImg` will display an error message within the element. You can style these error messages using CSS:
