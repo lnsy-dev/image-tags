@@ -6,7 +6,7 @@ class LazyImg extends HTMLElement {
       return;
     }
     this.loadImage();
-    this.style.objectFill = 'fill';
+    this.style.objectFit = 'fill';
   }
 
   updateProgress(progress) {
