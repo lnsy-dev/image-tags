@@ -1,6 +1,6 @@
 # Lazy Image Loader Custom Element
 
-This project defines a custom HTML element, `<lazy-img>`, designed for lazy-loading images with progress updates. It is an innovative solution for improving web performance by loading images as needed rather than all at once during the initial page load.
+This project defines a custom HTML element, `<lazy-img>`, designed for lazy-loading images with progress updates. 
 
 ## Features
 
